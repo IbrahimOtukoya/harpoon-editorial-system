@@ -74,13 +74,13 @@ export const grid = {
 } as const;
 
 export const spacing = [
-  { token: "space-1", pt: 3.5 },
-  { token: "space-2", pt: 7 },
-  { token: "space-3", pt: 14 },
-  { token: "space-4", pt: 21 },
-  { token: "space-5", pt: 28 },
-  { token: "space-6", pt: 42 },
-  { token: "space-7", pt: 56 },
+  { token: "space-1", pt: 4 },
+  { token: "space-2", pt: 8 },
+  { token: "space-3", pt: 12 },
+  { token: "space-4", pt: 16 },
+  { token: "space-5", pt: 32 },
+  { token: "space-6", pt: 64 },
+  { token: "space-7", pt: 128 },
 ] as const;
 
 export const columnWidthMm =

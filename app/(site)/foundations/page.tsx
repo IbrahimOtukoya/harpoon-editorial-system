@@ -177,14 +177,14 @@ export default function Foundations() {
         <SectionHead
           n="02.4"
           title="Spacing"
-          lead="Vertical space comes in baseline units, so headings, rules and images always land on the grid. Seven steps cover every case."
+          lead="Space comes in seven steps on a 4-point base: fine steps for type and components, then doubling steps for sections and pages. Nothing in between."
         />
         <div style={{ display: "grid", gap: 10 }}>
           {spacing.map((s) => (
             <div key={s.token} style={{ display: "grid", gridTemplateColumns: "88px 56px minmax(0, 1fr)", alignItems: "center", gap: 16, fontFamily: "var(--mono)", fontSize: 12 }}>
               <span style={{ color: "#0B7F7A" }}>{s.token}</span>
               <span style={{ color: "#5B6B70" }}>{s.pt} pt</span>
-              <span style={{ height: 12, width: `${s.pt * 4}px`, maxWidth: "100%", background: "#0B1F26" }} />
+              <span style={{ height: 12, width: `${s.pt * 3}px`, maxWidth: "100%", background: "#0B1F26" }} />
             </div>
           ))}
         </div>
