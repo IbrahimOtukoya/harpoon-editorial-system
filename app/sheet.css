@@ -1,0 +1,121 @@
+/* A4 sheets. Every size inside a sheet is a multiple of --pt, which is one
+   typographic point at the sheet's current width. On screen the sheet scales
+   with its container; in print the container is exactly 210mm, so 1 --pt is 1pt. */
+
+.sheet-frame { container-type: inline-size; width: 100%; }
+.sheet {
+  --pt: calc(100cqi / 595.28);
+  --mm: calc(var(--pt) * 2.8346);
+  --m-top: calc(var(--mm) * 20);
+  --m-bottom: calc(var(--mm) * 20);
+  --m-in: calc(var(--mm) * 18);
+  --m-out: calc(var(--mm) * 16);
+  --gut: calc(var(--mm) * 4);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  background: var(--white);
+  color: var(--ink-900);
+  overflow: hidden;
+  font-family: var(--serif);
+  font-size: calc(var(--pt) * 10);
+  line-height: calc(var(--pt) * 14);
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  box-shadow: 0 1px 0 rgba(11,31,38,.06), 0 18px 40px -24px rgba(11,31,38,.45);
+}
+.sheet.fragment { aspect-ratio: auto; padding: calc(var(--pt) * 28) var(--m-out) calc(var(--pt) * 28) var(--m-in); }
+.sheet.dark { background: var(--ink-900); color: var(--paper-50); }
+
+.sheet p { max-width: none; margin: 0 0 calc(var(--pt) * 7); }
+
+.s-body { position: absolute; top: var(--m-top); bottom: var(--m-bottom); left: var(--m-in); right: var(--m-out); display: flex; flex-direction: column; }
+.s-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gut); }
+.s-c12 { grid-column: span 12; } .s-c8 { grid-column: span 8; } .s-c7 { grid-column: span 7; } .s-c6 { grid-column: span 6; }
+.s-c5 { grid-column: span 5; } .s-c4 { grid-column: span 4; } .s-c3 { grid-column: span 3; }
+.s-start-9 { grid-column-start: 9; }
+
+.s-runhead, .s-folio {
+  position: absolute; left: var(--m-in); right: var(--m-out);
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: var(--mono); font-weight: 500; font-size: calc(var(--pt) * 7); line-height: calc(var(--pt) * 10.5);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-500);
+}
+.s-runhead { top: calc(var(--mm) * 8); }
+.s-runhead b { color: var(--teal-700); font-weight: 500; }
+.s-folio { bottom: calc(var(--mm) * 8); }
+.s-folio img { height: calc(var(--pt) * 9); width: auto; }
+.dark .s-runhead, .dark .s-folio { color: var(--steel-300); }
+.dark .s-runhead b { color: var(--teal-500); }
+
+.s-label { font-family: var(--mono); font-weight: 500; font-size: calc(var(--pt) * 7); line-height: calc(var(--pt) * 10.5); letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-700); margin: 0 0 calc(var(--pt) * 7); }
+.dark .s-label { color: var(--teal-500); }
+.s-display { font-size: calc(var(--pt) * 44); line-height: calc(var(--pt) * 49); letter-spacing: -0.015em; font-weight: 340; margin: 0; }
+.s-h1 { font-size: calc(var(--pt) * 30); line-height: calc(var(--pt) * 35); letter-spacing: -0.01em; font-weight: 380; margin: 0; }
+.s-h2 { font-size: calc(var(--pt) * 20); line-height: calc(var(--pt) * 24.5); letter-spacing: -0.005em; font-weight: 450; margin: 0 0 calc(var(--pt) * 7); }
+.s-h3 { font-family: var(--sans); font-weight: 600; font-size: calc(var(--pt) * 9); line-height: calc(var(--pt) * 14); margin: 0; letter-spacing: 0.01em; }
+.s-lead { font-size: calc(var(--pt) * 13.5); line-height: calc(var(--pt) * 17.5); color: var(--ink-700); margin: calc(var(--pt) * 10.5) 0 0; }
+.dark .s-lead { color: var(--steel-100); }
+.s-ui { font-family: var(--sans); font-size: calc(var(--pt) * 8.5); line-height: calc(var(--pt) * 12.25); }
+.s-caption { font-family: var(--sans); font-size: calc(var(--pt) * 7.5); line-height: calc(var(--pt) * 10.5); color: var(--steel-500); }
+.s-legal { font-family: var(--sans); font-size: calc(var(--pt) * 6.5); line-height: calc(var(--pt) * 8.75); color: var(--steel-500); }
+.s-num { font-variant-numeric: lining-nums tabular-nums; }
+
+.s-rule { border-top: calc(var(--pt) * 0.75) solid var(--ink-900); padding-top: calc(var(--pt) * 6); }
+.s-hair { border-top: calc(var(--pt) * 0.5) solid var(--steel-100); }
+.dark .s-rule { border-color: var(--paper-50); }
+
+.s-list { list-style: none; margin: 0; padding: 0; }
+.s-list li { padding: calc(var(--pt) * 3.5) 0; border-bottom: calc(var(--pt) * 0.5) solid var(--steel-100); }
+.s-steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.s-steps li { counter-increment: s; display: grid; grid-template-columns: calc(var(--pt) * 16) 1fr; padding: calc(var(--pt) * 3.5) 0; border-bottom: calc(var(--pt) * 0.5) solid var(--steel-100); }
+.s-steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--mono); font-size: calc(var(--pt) * 7); color: var(--teal-700); }
+.s-steps b { font-weight: 600; }
+
+.s-panel { background: var(--teal-50); padding: calc(var(--pt) * 10.5) calc(var(--pt) * 14); }
+.s-panel.ink { background: var(--ink-900); color: var(--paper-50); }
+
+.s-stat .v { font-size: calc(var(--pt) * 30); line-height: calc(var(--pt) * 31.5); letter-spacing: -0.02em; font-weight: 340; font-variant-numeric: lining-nums; }
+.s-stat .v small { font-size: 0.45em; color: var(--steel-500); margin-left: calc(var(--pt) * 2); }
+.s-stat .l { font-family: var(--sans); font-size: calc(var(--pt) * 7.5); line-height: calc(var(--pt) * 10.5); color: var(--ink-700); margin-top: calc(var(--pt) * 3.5); }
+.s-stat.signal .v { color: #a64a12; }
+
+.s-quote { border-left: calc(var(--pt) * 1.5) solid var(--teal-500); padding-left: calc(var(--pt) * 10.5); }
+.s-quote p.s-caption { font-size: calc(var(--pt) * 7.5); line-height: calc(var(--pt) * 10.5); font-style: normal; margin: 0; }
+.s-quote p:not(.s-caption) { font-size: calc(var(--pt) * 15); line-height: calc(var(--pt) * 19.25); font-style: italic; font-weight: 340; margin: 0 0 calc(var(--pt) * 7); }
+
+.s-table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: calc(var(--pt) * 8.5); line-height: calc(var(--pt) * 12.25); }
+.s-table th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: calc(var(--pt) * 6.5); letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-500); border-bottom: calc(var(--pt) * 0.75) solid var(--ink-900); padding: 0 calc(var(--pt) * 6) calc(var(--pt) * 3.5) 0; }
+.s-table td { padding: calc(var(--pt) * 4) calc(var(--pt) * 6) calc(var(--pt) * 4) 0; border-bottom: calc(var(--pt) * 0.5) solid var(--steel-100); vertical-align: top; }
+.s-table .r { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+.s-table tfoot td { border-bottom: 0; border-top: calc(var(--pt) * 0.75) solid var(--ink-900); font-weight: 600; }
+.s-field { font-family: var(--mono); font-size: 0.92em; color: var(--teal-700); background: var(--teal-50); padding: 0 calc(var(--pt) * 2); }
+
+.s-lifecycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: calc(var(--pt) * 2); font-family: var(--mono); font-size: calc(var(--pt) * 5.75); letter-spacing: 0.06em; text-transform: uppercase; }
+.s-lifecycle span { border-top: calc(var(--pt) * 2) solid var(--steel-100); padding-top: calc(var(--pt) * 3.5); color: var(--steel-500); }
+.s-lifecycle span.on { border-color: var(--teal-500); color: var(--ink-900); }
+.dark .s-lifecycle span { border-color: var(--ink-700); color: var(--steel-300); }
+.dark .s-lifecycle span.on { border-color: var(--teal-500); color: var(--paper-50); }
+
+.s-gantt { font-family: var(--sans); font-size: calc(var(--pt) * 7.5); }
+.s-gantt .row { display: grid; grid-template-columns: 34% 1fr; align-items: center; border-bottom: calc(var(--pt) * 0.5) solid var(--steel-100); height: calc(var(--pt) * 17.5); }
+.s-gantt .track { position: relative; height: 100%; background-image: linear-gradient(to right, var(--steel-100) calc(var(--pt) * 0.5), transparent calc(var(--pt) * 0.5)); background-size: 20% 100%; }
+.s-gantt .bar { position: absolute; top: 50%; height: calc(var(--pt) * 5); transform: translateY(-50%); border-radius: calc(var(--pt) * 2.5); background: #00918a; }
+.s-gantt .bar.ms { width: calc(var(--pt) * 7) !important; height: calc(var(--pt) * 7); border-radius: 0; transform: translate(-50%, -50%) rotate(45deg); background: var(--signal-500); }
+.s-gantt .head { display: grid; grid-template-columns: 34% repeat(5, 1fr); font-family: var(--mono); font-size: calc(var(--pt) * 6.5); color: var(--steel-500); letter-spacing: 0.06em; padding-bottom: calc(var(--pt) * 3.5); border-bottom: calc(var(--pt) * 0.75) solid var(--ink-900); }
+
+.s-cover-hook { position: absolute; right: var(--m-out); top: var(--m-top); width: calc(var(--pt) * 2); height: 38%; background: var(--teal-500); }
+.s-divider-n { font-family: var(--mono); font-size: calc(var(--pt) * 7); letter-spacing: 0.08em; color: var(--teal-500); }
+.s-mega { font-size: calc(var(--pt) * 96); line-height: calc(var(--pt) * 91); letter-spacing: -0.035em; font-weight: 300; margin: 0; }
+
+.s-chart svg text { font-family: var(--sans); }
+
+@media print {
+  .print-stack { width: 210mm; }
+  .print-stack .sheet-frame { width: 210mm; }
+  .print-stack .sheet-frame:not(:last-child) { break-after: page; }
+  .print-stack .sheet { box-shadow: none; width: 210mm; height: 297mm; }
+}
+
+@media print {
+  .print-stack { padding: 0 !important; gap: 0 !important; display: block !important; }
+}
