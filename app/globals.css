@@ -271,19 +271,19 @@ p { margin: 0 0 1em; max-width: var(--measure); text-wrap: pretty; }
 .chart-card .sub { font-family: var(--body); font-size: 14px; color: var(--steel-500); margin: 8px 0 24px; }
 .chart-wrap { position: relative; }
 .chart-wrap svg { display: block; width: 100%; height: auto; overflow: visible; }
-.chart-wrap svg text { font-family: var(--body); }
+.chart-wrap svg text { font-family: var(--mono); }
 .tip {
   position: absolute; pointer-events: none; background: var(--ink-900); color: var(--paper-50);
-  font-family: var(--body); font-size: 12.5px; line-height: 1.4; padding: 8px 10px; border-radius: 3px;
+  font-family: var(--mono); font-size: 12px; line-height: 1.4; padding: 8px 10px; border-radius: 3px;
   transform: translate(-50%, calc(-100% - 10px)); white-space: nowrap; z-index: 5;
 }
 .tip b { font-weight: 600; display: block; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--body); font-size: 13px; color: var(--ink-700); margin: 0 0 16px; padding: 0; list-style: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--mono); font-size: 13px; color: var(--ink-700); margin: 0 0 16px; padding: 0; list-style: none; }
 .legend li { display: flex; align-items: center; gap: 8px; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 .table-toggle { margin-top: 16px; font-family: var(--body); font-size: 13px; }
 .table-toggle summary { cursor: pointer; color: var(--teal-700); }
-.data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-family: var(--body); font-size: 13px; }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-family: var(--mono); font-size: 13px; }
 .data-table th, .data-table td { text-align: left; padding: 6px 12px 6px 0; border-bottom: var(--rule); }
 .data-table td.r, .data-table th.r { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
 

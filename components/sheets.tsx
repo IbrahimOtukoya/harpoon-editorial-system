@@ -151,7 +151,7 @@ export function OnePager() {
               <p className="s-label" style={{ margin: 0 }}>The result</p>
             </div>
             <div className="s-c8" style={{ gridColumn: "4 / span 9" }}>
-              <p style={{ margin: 0, fontSize: "calc(var(--pt) * 11.5)", lineHeight: "calc(var(--pt) * 15.75)" }}>
+              <p style={{ margin: 0, fontSize: "calc(var(--pt) * 10)", lineHeight: "calc(var(--pt) * 14)" }}>
                 A complete inventory of OT assets, a prioritised view of vulnerabilities and a remediation roadmap.
                 Leadership gains confidence; technical teams get actionable next steps.
               </p>

@@ -155,7 +155,7 @@ export default function Components() {
             </Fragment>
           </div>
           <div className="specimen-card" style={{ gridColumn: "1 / -1" }}>
-            <div className="frame-label"><span>Table</span><span>Plex Sans, tabular figures</span></div>
+            <div className="frame-label"><span>Table</span><span>Poppins, Plex Mono figures</span></div>
             <Fragment>
               <table className="s-table">
                 <thead>

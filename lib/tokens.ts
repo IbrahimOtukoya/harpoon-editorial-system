@@ -46,23 +46,22 @@ export const dataviz = {
 
 // Print sizes in points; screen sizes are derived (1pt = 1.333px).
 export const type = [
-  { token: "display", family: "serif", weight: 380, size: 44, leading: 49, tracking: -0.015, use: "Covers and section openers only." },
-  { token: "h1", family: "serif", weight: 400, size: 30, leading: 35, tracking: -0.01, use: "Page title. One per page." },
-  { token: "h2", family: "serif", weight: 500, size: 20, leading: 24.5, tracking: -0.005, use: "Section heads within a page." },
-  { token: "h3", family: "sans", weight: 600, size: 11, leading: 14, tracking: 0, use: "Sub-heads, table titles, box heads." },
-  { token: "lead", family: "serif", weight: 400, size: 13.5, leading: 17.5, tracking: 0, use: "Standfirst under a title. Two to four lines." },
-  { token: "body", family: "serif", weight: 400, size: 10, leading: 14, tracking: 0, use: "Running text. 55 to 75 characters per line." },
-  { token: "ui", family: "sans", weight: 400, size: 9.5, leading: 14, tracking: 0, use: "Tables, lists, deliverables, form-like content." },
-  { token: "caption", family: "sans", weight: 400, size: 7.5, leading: 10.5, tracking: 0.005, use: "Figure captions, sources, chart labels." },
-  { token: "label", family: "mono", weight: 500, size: 7, leading: 10.5, tracking: 0.08, use: "Eyebrows, folios, running heads, standards refs. Uppercase." },
-  { token: "legal", family: "sans", weight: 400, size: 6.5, leading: 9, tracking: 0.01, use: "Back page only. Nothing in the system is set smaller." },
+  { token: "display", family: "head", weight: 700, size: 44, leading: 49, tracking: -0.02, use: "Covers and section openers only." },
+  { token: "h1", family: "head", weight: 700, size: 30, leading: 35, tracking: -0.015, use: "Page title. One per page." },
+  { token: "h2", family: "head", weight: 600, size: 20, leading: 24.5, tracking: -0.01, use: "Section heads within a page." },
+  { token: "h3", family: "head", weight: 700, size: 11, leading: 14, tracking: 0, use: "Sub-heads, table titles, box heads." },
+  { token: "lead", family: "body", weight: 400, size: 12.5, leading: 17.5, tracking: 0, use: "Standfirst under a title. Two to four lines." },
+  { token: "body", family: "body", weight: 400, size: 9, leading: 14, tracking: 0, use: "Running text. 55 to 75 characters per line." },
+  { token: "ui", family: "body", weight: 400, size: 8.5, leading: 14, tracking: 0, use: "Tables, lists, deliverables, form-like content." },
+  { token: "caption", family: "body", weight: 400, size: 7, leading: 10.5, tracking: 0.005, use: "Figure captions and sources." },
+  { token: "label", family: "mono", weight: 500, size: 7, leading: 10.5, tracking: 0.08, use: "Eyebrows, folios, running heads, standards refs, chart labels. Uppercase." },
+  { token: "legal", family: "body", weight: 400, size: 6.5, leading: 9, tracking: 0.01, use: "Back page only. Nothing in the system is set smaller." },
 ] as const;
 
 export const families = {
-  serif: { name: "Newsreader", css: "'Newsreader Variable', Georgia, serif", why: "A text face with optical sizes, so the same family sets a 44pt cover and 10pt body. Gives reports the authority of a briefing, not a flyer." },
-  sans: { name: "IBM Plex Sans", css: "'IBM Plex Sans', system-ui, sans-serif", why: "Engineered, slightly mechanical. Born at an engineering company, it suits OT and stays legible in dense tables." },
-  mono: { name: "IBM Plex Mono", css: "'IBM Plex Mono', ui-monospace, monospace", why: "For the apparatus: folios, labels, IEC 62443 clause numbers, durations. Signals precision without shouting." },
-  logo: { name: "Visby CF", css: "", why: "Kept in the logo only. Montserrat retires from all running text." },
+  head: { name: "Visby CF", css: "'Visby CF', 'Urbanist Variable', sans-serif", why: "Harpoon's own geometric face, already in the logo. Bold weights only, for titles, section heads and sub-heads." },
+  body: { name: "Poppins", css: "'Poppins', system-ui, sans-serif", why: "Harpoon's text face. Open and even, it stays readable at 9pt in reports and holds up in dense deliverable lists." },
+  mono: { name: "IBM Plex Mono", css: "'IBM Plex Mono', ui-monospace, monospace", why: "For technical detail and data: folios, labels, IEC 62443 clause numbers, durations, chart axes and values." },
 } as const;
 
 export const grid = {

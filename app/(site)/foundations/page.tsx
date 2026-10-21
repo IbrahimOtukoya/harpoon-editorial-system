@@ -5,7 +5,7 @@ import { colour, families, grid, spacing, type, columnWidthMm } from "@/lib/toke
 
 export const metadata: Metadata = { title: "Foundations · Harpoon Editorial System" };
 
-const familyCss = { serif: "var(--serif)", sans: "var(--sans)", mono: "var(--mono)" } as const;
+const familyCss = { head: "var(--head)", body: "var(--body)", mono: "var(--mono)" } as const;
 
 function onDark(hex: string) {
   const n = parseInt(hex.slice(1), 16);
@@ -85,13 +85,13 @@ export default function Foundations() {
         <SectionHead
           n="02.2"
           title="Typography"
-          lead="Three families with separate jobs: a serif to read, a sans to organise, a mono to measure. Hierarchy comes from the change of voice, not from bolding."
+          lead="Three families with separate jobs: Visby CF to announce, Poppins to read, Plex Mono to measure. Hierarchy comes from the change of voice, not from adding weights."
         />
         <div className="families">
-          {(["serif", "sans", "mono"] as const).map((k) => (
+          {(["head", "body", "mono"] as const).map((k) => (
             <div className="family" key={k}>
-              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "serif" ? "Read" : k === "sans" ? "Organise" : "Measure"}</p>
-              <div className="glyphs" style={{ fontFamily: familyCss[k], fontWeight: k === "serif" ? 360 : 400 }}>
+              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "head" ? "Announce" : k === "body" ? "Read" : "Measure"}</p>
+              <div className="glyphs" style={{ fontFamily: familyCss[k], fontWeight: k === "head" ? 700 : 400 }}>
                 Aa<span style={{ color: "#0B7F7A" }}>62</span>
               </div>
               <h3 className="h3">{families[k].name}</h3>
@@ -100,8 +100,8 @@ export default function Foundations() {
           ))}
         </div>
         <p className="caption" style={{ marginTop: 16 }}>
-          All three are open-source (SIL Open Font License): no licence cost and no font substitution when a file is
-          opened on another machine. Visby CF remains in the logo only.
+          Visby CF and Poppins are Harpoon&rsquo;s existing brand faces; Plex Mono is open-source (SIL Open Font
+          License). Embed all three in every exported PDF so nothing substitutes on another machine.
         </p>
 
         <h3 className="h3" style={{ marginTop: 64, marginBottom: 8 }}>Scale</h3>
@@ -129,7 +129,7 @@ export default function Foundations() {
             <div className="spec">
               {t.size}/{t.leading} pt · {Math.round(t.size * 1.333)}px
               <br />
-              {t.family === "serif" ? "Newsreader" : t.family === "sans" ? "Plex Sans" : "Plex Mono"} {t.weight}
+              {families[t.family].name} {t.weight}
               {t.tracking ? ` · ${t.tracking > 0 ? "+" : ""}${t.tracking * 1000}` : ""}
               <br />
               <span style={{ color: "#2C3E44" }}>{t.use}</span>

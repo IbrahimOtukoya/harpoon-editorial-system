@@ -60,8 +60,8 @@ const findings: Finding[] = [
     ),
     fix: (
       <>
-        Three faces, three jobs: Newsreader for reading and headlines, IBM Plex Sans for tables and apparatus, IBM
-        Plex Mono for labels and figures. Visby CF stays in the logo. See Foundations, 02.2.
+        Three faces, three jobs: Visby CF (from the logo) for headings, Poppins for running text, IBM Plex Mono for
+        labels, figures and charts. Montserrat retires. See Foundations, 02.2.
       </>
     ),
     pages: [
