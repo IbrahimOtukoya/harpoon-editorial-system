@@ -78,59 +78,6 @@ export default function Foundations() {
           </div>
         </div>
 
-        <div className="cols-2" style={{ marginTop: 48 }}>
-          <div>
-            <h3 className="h3" style={{ marginBottom: 12 }}>Teal ramp</h3>
-            <div className="ramp">
-              {colour.teal.map((c) => (
-                <div key={c.token} style={{ background: c.hex, color: onDark(c.hex) ? "#F6F4EF" : "#0B1F26" }}>
-                  <span>{c.token.replace("teal-", "")}</span>
-                  <span>{c.hex}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="h3" style={{ marginBottom: 12 }}>Neutrals</h3>
-            <div className="ramp">
-              {colour.neutral.map((c) => (
-                <div key={c.token} style={{ background: c.hex, color: onDark(c.hex) ? "#F6F4EF" : "#0B1F26" }}>
-                  <span>{c.token.split("-")[0]}</span>
-                  <span>{c.hex}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="cols-2" style={{ marginTop: 48 }}>
-          <div>
-            <h3 className="h3">Proportion</h3>
-            <p className="small">
-              On a typical page: Paper about 80%, Abyss 15% (text and rules), teal under 5%. A cover may invert to an
-              Abyss ground. If a page needs more colour than this, it needs a chart, not a tint.
-            </p>
-            <div style={{ display: "flex", height: 28, marginTop: 16, border: "1px solid #D9DEDC" }} aria-hidden>
-              <div style={{ flex: 80, background: "#F6F4EF" }} />
-              <div style={{ flex: 15, background: "#0B1F26" }} />
-              <div style={{ flex: 4, background: "#19BFB7" }} />
-              <div style={{ flex: 1, background: "#D9822B" }} />
-            </div>
-          </div>
-          <div>
-            <h3 className="h3">Retired</h3>
-            {colour.retired.map((r) => (
-              <div className="retired" key={r.hex}>
-                <div className="x" style={{ background: r.hex }} />
-                <div>
-                  <span className="mono" style={{ fontSize: 12 }}>{r.hex}</span> · {r.where}
-                  <br />
-                  <span style={{ color: "#5B6B70" }}>{r.why}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* TYPE */}
