@@ -12,21 +12,21 @@ export function RunHead({ n, title }: { n: string; title: string }) {
   );
 }
 
-// Each page opens on a different crop of the same cabinet, the way a guidelines book returns to one object.
+// Every page opens on the same production-line photograph under a teal wash, cropped differently per page.
+// Photo: Homa Appliances on Unsplash.
 const crops = {
-  home: { size: "auto 118%", pos: "88% 20%" },
-  audit: { size: "auto 330%", pos: "76% 42%" },
-  foundations: { size: "auto 260%", pos: "100% 0%" },
-  data: { size: "auto 280%", pos: "100% 92%" },
-  components: { size: "auto 240%", pos: "0% 62%" },
-  templates: { size: "auto 200%", pos: "92% 96%" },
+  home: "50% 60%",
+  audit: "20% 70%",
+  foundations: "80% 40%",
+  data: "40% 85%",
+  components: "65% 75%",
+  templates: "5% 50%",
 } as const;
 
 export function Hero({ title, crop, tall }: { title: string; crop: keyof typeof crops; tall?: boolean }) {
-  const c = crops[crop];
   return (
     <header className={tall ? "hero tall" : "hero"}>
-      <div className="hero-img" aria-hidden style={{ backgroundSize: c.size, backgroundPosition: c.pos }} />
+      <div className="hero-img" aria-hidden style={{ backgroundPosition: crops[crop] }} />
       <div className="hero-titles">
         <span>Harpoon</span>
         <span>{title}</span>

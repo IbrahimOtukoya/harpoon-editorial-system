@@ -120,10 +120,13 @@ main { min-width: 0; background: var(--white); }
 @media (min-width: 1100px) { .page { --px: 72px; --pt: 72px; padding-bottom: 160px; } }
 .page > :not(.hero) { max-width: 1320px; }
 
-.hero { position: relative; margin: calc(-1 * var(--pt)) calc(-1 * var(--px)) 0; height: 64vh; min-height: 380px; overflow: hidden; background: #c9cfcd; color: var(--white); }
+.hero { position: relative; margin: calc(-1 * var(--pt)) calc(-1 * var(--px)) 0; height: 64vh; min-height: 380px; overflow: hidden; background: var(--teal-900); color: var(--white); isolation: isolate; }
 .hero.tall { height: 100vh; min-height: 560px; }
-.hero-img { position: absolute; inset: 0; background: url(/hero-cabinet.svg) no-repeat; }
-.hero::after { content: ""; position: absolute; inset: 0 0 auto; height: 40%; background: linear-gradient(rgba(11, 31, 38, 0.38), transparent); pointer-events: none; }
+/* duotone: the photo in greyscale, multiplied by Deep Teal, lifted by a little Hook Teal in the highlights */
+.hero-img { position: absolute; inset: 0; background: url(/hero-line.jpg) no-repeat; background-size: cover; filter: grayscale(1) contrast(1.1) brightness(1.05); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(var(--teal-700), var(--teal-700)); mix-blend-mode: multiply; pointer-events: none; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(8, 63, 62, 0.55), rgba(8, 63, 62, 0) 45%), rgba(25, 191, 183, 0.12); mix-blend-mode: normal; pointer-events: none; }
+.hero-img { z-index: -1; }
 .hero-titles { font-family: var(--head); position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 0; padding: 28px var(--px); font-weight: 700; font-size: clamp(30px, 3.4vw, 52px); line-height: 1; letter-spacing: -0.02em; }
 @media (min-width: 760px) { .hero-titles { grid-template-columns: 1fr 1fr; padding-top: 44px; } }
 
