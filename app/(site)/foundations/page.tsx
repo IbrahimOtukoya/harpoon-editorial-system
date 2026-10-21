@@ -85,12 +85,12 @@ export default function Foundations() {
         <SectionHead
           n="02.2"
           title="Typography"
-          lead="Three families with separate jobs: Visby CF to announce, Poppins to read, Plex Mono to measure. Hierarchy comes from the change of voice, not from adding weights."
+          lead="Three families with separate jobs: Visby CF for headers, Poppins for body, Plex Mono for technical details. Hierarchy comes from the change of voice, not from adding weights."
         />
         <div className="families">
           {(["head", "body", "mono"] as const).map((k) => (
             <div className="family" key={k}>
-              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "head" ? "Announce" : k === "body" ? "Read" : "Measure"}</p>
+              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "head" ? "Headers" : k === "body" ? "Body" : "Technical details"}</p>
               <div className="glyphs" style={{ fontFamily: familyCss[k], fontWeight: k === "head" ? 700 : 400 }}>
                 Aa<span style={{ color: "#0B7F7A" }}>62</span>
               </div>
