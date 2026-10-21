@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextUp, RunHead, SectionHead } from "@/components/Furniture";
+import { Hero, NextUp, SectionHead } from "@/components/Furniture";
 import { OnePager, ProposalCover, ProposalPlan, ProposalScope, ReportCover, ReportFindings, ReportSummary, TimelineSheet } from "@/components/sheets";
 import { docs } from "@/lib/docs";
 
@@ -21,17 +21,18 @@ function Actions({ doc }: { doc: keyof typeof docs }) {
 export default function Templates() {
   return (
     <div className="page">
-      <RunHead n="05" title="Templates" />
-      <p className="eyebrow">05 · Templates</p>
-      <h1 className="h1" style={{ maxWidth: "16ch" }}>
+      <Hero title="Templates" crop="templates" />
+      <div className="opening">
+        <h1 className="h1">
         Three documents that cover most of what Harpoon sends.
-      </h1>
-      <p className="lead" style={{ marginTop: 24 }}>
+        </h1>
+        <p className="lead">
         Each is laid out at A4 on the 12-column grid and filled with Harpoon&rsquo;s own content. Client details are
         illustrative. Every template downloads as a print-ready PDF.
-      </p>
+        </p>
+      </div>
 
-      <section className="section" style={{ marginTop: 80 }}>
+      <section className="section">
         <SectionHead
           n="05.1"
           title="Service one-pager"

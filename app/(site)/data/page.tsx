@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextUp, RunHead, SectionHead } from "@/components/Furniture";
+import { Hero, NextUp, SectionHead } from "@/components/Furniture";
 import { DurationChart, DurationTable, MaturityChart, RiskMatrix } from "@/components/charts";
 import { maturity } from "@/lib/sample";
 import { dataviz } from "@/lib/tokens";
@@ -9,18 +9,19 @@ export const metadata: Metadata = { title: "Data visualisation · Harpoon Editor
 export default function Data() {
   return (
     <div className="page">
-      <RunHead n="03" title="Data visualisation" />
-      <p className="eyebrow">03 · Data visualisation</p>
-      <h1 className="h1" style={{ maxWidth: "15ch" }}>
+      <Hero title="Data visualisation" crop="data" />
+      <div className="opening">
+        <h1 className="h1">
         Numbers are Harpoon&rsquo;s best imagery.
-      </h1>
-      <p className="lead" style={{ marginTop: 24 }}>
+        </h1>
+        <p className="lead">
         The brochure contains real figures, real timelines and a real method, and draws none of them. This section
         sets out how Harpoon shows data, worked on its own content: a hero figure, a comparison, a gap analysis and a
         risk matrix.
-      </p>
+        </p>
+      </div>
 
-      <section className="section" style={{ marginTop: 80 }}>
+      <section className="section">
         <SectionHead
           n="03.1"
           title="The stat callout"

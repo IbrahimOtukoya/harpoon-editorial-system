@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextUp, RunHead, SectionHead } from "@/components/Furniture";
+import { Hero, NextUp, SectionHead } from "@/components/Furniture";
 import { GridDiagram } from "@/components/GridDiagram";
 import { colour, families, grid, spacing, type, columnWidthMm } from "@/lib/tokens";
 
@@ -29,19 +29,20 @@ const samples: Record<string, string> = {
 export default function Foundations() {
   return (
     <div className="page">
-      <RunHead n="02" title="Foundations" />
-      <p className="eyebrow">02 · Foundations</p>
-      <h1 className="h1" style={{ maxWidth: "15ch" }}>
+      <Hero title="Foundations" crop="foundations" />
+      <div className="opening">
+        <h1 className="h1">
         Four decisions that every page inherits.
-      </h1>
-      <p className="lead" style={{ marginTop: 24 }}>
+        </h1>
+        <p className="lead">
         Colour, type, grid and spacing are set once and expressed as tokens. Print values are in points and
         millimetres, the units a PDF is built in. The same tokens drive this site and are downloadable as{" "}
         <a href="/tokens.json">tokens.json</a>.
-      </p>
+        </p>
+      </div>
 
       {/* COLOUR */}
-      <section className="section" style={{ marginTop: 80 }}>
+      <section className="section">
         <SectionHead
           n="02.1"
           title="Colour"

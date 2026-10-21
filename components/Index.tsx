@@ -10,7 +10,6 @@ export function Index() {
     <nav className="index no-print" aria-label="Contents">
       <Link href="/" className="index-brand">
         <img src="/harpoon-logo-ink.png" alt="Harpoon" width={1189} height={226} />
-        <span>Editorial System</span>
       </Link>
       <ol>
         {sections.map((s) => {
@@ -18,7 +17,7 @@ export function Index() {
           return (
             <li key={s.href}>
               <Link href={s.href} aria-current={current ? "page" : undefined}>
-                <span className="n">{s.n}</span>
+                <span className="n">{Number(s.n)}</span>
                 {s.title}
               </Link>
             </li>

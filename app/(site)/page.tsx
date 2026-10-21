@@ -1,67 +1,52 @@
 import Link from "next/link";
 import { sections } from "@/lib/nav";
-import { NextUp } from "@/components/Furniture";
+import { Hero, NextUp } from "@/components/Furniture";
 
 export default function Home() {
   return (
     <div className="page">
-      <section className="cover">
-        <div>
-          <p className="eyebrow">Harpoon Consulting · Editorial System · Proposal</p>
-          <h1 className="display cover-title">
-            Materials that look as <em>engineered</em> as the work.
-          </h1>
-        </div>
-        <div>
-          <p className="lead">
-            An audit of Harpoon&rsquo;s current brochure and a proposed system for every PDF that follows: reports,
-            proposals and one-pagers that share one type scale, one grid, one way of showing data, and that no one
-            could mistake for a template.
+      <Hero title="Editorial system" crop="home" tall />
+
+      <section className="opening">
+        <h1 className="h1">
+          Materials that look as <em>engineered</em> as the work.
+        </h1>
+        <div className="big">
+          <p>
+            This is an audit of Harpoon&rsquo;s current brochure and a proposed system for every PDF that follows:
+            reports, proposals and one-pagers that share one type scale, one grid and one way of showing data.
           </p>
-          <dl className="cover-meta">
-            <div>
-              <dt>Prepared for</dt>
-              <dd>Harpoon Consulting Ltd</dd>
-            </div>
-            <div>
-              <dt>Prepared by</dt>
-              <dd>Ibrahim Otukoya</dd>
-            </div>
-            <div>
-              <dt>Source audited</dt>
-              <dd>OT Security Services Brochure, Sept 2025</dd>
-            </div>
-            <div>
-              <dt>Status</dt>
-              <dd>Proposal v0.1</dd>
-            </div>
-          </dl>
+          <p>
+            Harpoon&rsquo;s pitch is that clients deserve better than a templated playbook with their logo dropped in.
+            The printed materials should make that argument before anyone reads a word. Right now the brochure is built
+            from stock boxes, stock gradients and stock photography, so it looks like everyone else&rsquo;s.
+          </p>
+          <p>
+            The content is strong and the structure behind the service pages is good. What is missing is a set of rules
+            that makes the twentieth document as considered as the first, whoever makes it. This site is those rules,
+            shown on Harpoon&rsquo;s own content.
+          </p>
         </div>
       </section>
 
-      <section className="section" style={{ marginTop: 120 }}>
-        <div className="offset">
-          <p className="eyebrow">Why a system</p>
-          <div>
-            <blockquote className="pullquote" style={{ marginTop: 0 }}>
-              <p>&ldquo;Most will hand you a templated playbook with your logo dropped in.&rdquo;</p>
-              <cite>Harpoon OT Security Brochure, p.03 — on competitors</cite>
-            </blockquote>
-            <p>
-              Harpoon&rsquo;s pitch is that OT security should be fast, sustainable and simplified, and that clients
-              deserve better than generic playbooks. The printed materials should make the same argument before anyone
-              reads a word. Right now they work against it: the brochure is built from stock boxes, stock gradients and
-              stock photography, so it looks like everyone else&rsquo;s.
-            </p>
-            <p>
-              The content is strong. The structure behind the service pages is genuinely good. What is missing is a set
-              of rules that turns that structure into something distinctive and repeatable, so the twentieth document
-              looks as considered as the first, whoever makes it.
-            </p>
-            <p>This site is those rules, worked out in full and shown on Harpoon&rsquo;s own content.</p>
-          </div>
+      <dl className="cover-meta">
+        <div>
+          <dt>Prepared for</dt>
+          <dd>Harpoon Consulting Ltd</dd>
         </div>
-      </section>
+        <div>
+          <dt>Prepared by</dt>
+          <dd>Ibrahim Otukoya</dd>
+        </div>
+        <div>
+          <dt>Source audited</dt>
+          <dd>OT Security Services Brochure, Sept 2025</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Proposal v0.1</dd>
+        </div>
+      </dl>
 
       <section className="section">
         <div className="offset">

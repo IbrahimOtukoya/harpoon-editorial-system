@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextUp, RunHead, SectionHead } from "@/components/Furniture";
+import { Hero, NextUp, SectionHead } from "@/components/Furniture";
 import { Divider, Lifecycle } from "@/components/sheets";
 
 export const metadata: Metadata = { title: "Components · Harpoon Editorial System" };
@@ -15,17 +15,18 @@ function Fragment({ children }: { children: React.ReactNode }) {
 export default function Components() {
   return (
     <div className="page">
-      <RunHead n="04" title="Components" />
-      <p className="eyebrow">04 · Components</p>
-      <h1 className="h1" style={{ maxWidth: "16ch" }}>
+      <Hero title="Components" crop="components" />
+      <div className="opening">
+        <h1 className="h1">
         A small kit of parts, used the same way every time.
-      </h1>
-      <p className="lead" style={{ marginTop: 24 }}>
+        </h1>
+        <p className="lead">
         Each component is shown at true A4 proportions and built from the foundation tokens. Together they replace the
         brochure&rsquo;s tinted boxes, gradient bands and stock photography.
-      </p>
+        </p>
+      </div>
 
-      <section className="section" style={{ marginTop: 80 }}>
+      <section className="section">
         <SectionHead
           n="04.1"
           title="Section divider"

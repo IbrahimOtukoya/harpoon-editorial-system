@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Evidence, type Pin } from "@/components/Evidence";
-import { NextUp, RunHead, SectionHead } from "@/components/Furniture";
+import { Hero, NextUp, SectionHead } from "@/components/Furniture";
 
 export const metadata: Metadata = { title: "Audit · Harpoon Editorial System" };
 
@@ -224,18 +224,19 @@ const scorecard: [string, number, string][] = [
 export default function Audit() {
   return (
     <div className="page">
-      <RunHead n="01" title="Audit" />
-      <p className="eyebrow">01 · Audit</p>
-      <h1 className="h1" style={{ maxWidth: "16ch" }}>
+      <Hero title="Audit" crop="audit" />
+      <div className="opening">
+        <h1 className="h1">
         The brochure has a strong spine and a generic skin.
-      </h1>
-      <p className="lead" style={{ marginTop: 24 }}>
+        </h1>
+        <p className="lead">
         Source: <em>OT Security Services Brochure</em>, 31 pages, A4, September 2025, built in Canva. Every page was
         reviewed. Findings are ordered by how much they cost the brand, each with the evidence and the fix the proposed
         system applies.
-      </p>
+        </p>
+      </div>
 
-      <section className="section" style={{ marginTop: 80 }}>
+      <section className="section">
         <SectionHead n="01.1" title="Scorecard" />
         <div style={{ overflowX: "auto" }}>
           <table className="scorecard">
