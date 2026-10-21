@@ -28,7 +28,6 @@ export function Hero({ title, crop, tall }: { title: string; crop: keyof typeof 
     <header className={tall ? "hero tall" : "hero"}>
       <div className="hero-img" aria-hidden style={{ backgroundPosition: crops[crop] }} />
       <div className="hero-titles">
-        <span>Harpoon</span>
         <span>{title}</span>
       </div>
     </header>
