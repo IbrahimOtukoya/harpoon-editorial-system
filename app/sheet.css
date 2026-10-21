@@ -58,7 +58,7 @@
 .s-ui { font-family: var(--body); font-size: calc(var(--pt) * 8.5); line-height: calc(var(--pt) * 12.25); }
 .s-caption { font-family: var(--body); font-size: calc(var(--pt) * 7.5); line-height: calc(var(--pt) * 10.5); color: var(--steel-500); }
 .s-legal { font-family: var(--body); font-size: calc(var(--pt) * 6.5); line-height: calc(var(--pt) * 8.75); color: var(--steel-500); }
-.s-num { font-variant-numeric: lining-nums tabular-nums; }
+.s-num { font-family: var(--sans); font-variant-numeric: lining-nums tabular-nums; }
 
 .s-rule { border-top: calc(var(--pt) * 0.75) solid var(--ink-900); padding-top: calc(var(--pt) * 6); }
 .s-hair { border-top: calc(var(--pt) * 0.5) solid var(--steel-100); }
@@ -74,7 +74,7 @@
 .s-panel { background: var(--teal-50); padding: calc(var(--pt) * 10.5) calc(var(--pt) * 14); }
 .s-panel.ink { background: var(--ink-900); color: var(--paper-50); }
 
-.s-stat .v { font-size: calc(var(--pt) * 30); line-height: calc(var(--pt) * 31.5); letter-spacing: -0.02em; font-weight: 340; font-variant-numeric: lining-nums; }
+.s-stat .v { font-family: var(--sans); font-size: calc(var(--pt) * 30); line-height: calc(var(--pt) * 31.5); letter-spacing: -0.02em; font-weight: 400; font-variant-numeric: lining-nums; }
 .s-stat .v small { font-size: 0.45em; color: var(--steel-500); margin-left: calc(var(--pt) * 2); }
 .s-stat .l { font-family: var(--body); font-size: calc(var(--pt) * 7.5); line-height: calc(var(--pt) * 10.5); color: var(--ink-700); margin-top: calc(var(--pt) * 3.5); }
 .s-stat.signal .v { color: #a64a12; }
@@ -96,7 +96,7 @@
 .dark .s-lifecycle span { border-color: var(--ink-700); color: var(--steel-300); }
 .dark .s-lifecycle span.on { border-color: var(--teal-500); color: var(--paper-50); }
 
-.s-gantt { font-family: var(--mono); font-size: calc(var(--pt) * 7.5); }
+.s-gantt { font-family: var(--sans); font-size: calc(var(--pt) * 7.5); }
 .s-gantt .row { display: grid; grid-template-columns: 34% 1fr; align-items: center; border-bottom: calc(var(--pt) * 0.5) solid var(--steel-100); height: calc(var(--pt) * 17.5); }
 .s-gantt .track { position: relative; height: 100%; background-image: linear-gradient(to right, var(--steel-100) calc(var(--pt) * 0.5), transparent calc(var(--pt) * 0.5)); background-size: 20% 100%; }
 .s-gantt .bar { position: absolute; top: 50%; height: calc(var(--pt) * 5); transform: translateY(-50%); border-radius: calc(var(--pt) * 2.5); background: #00918a; }
@@ -107,7 +107,7 @@
 .s-divider-n { font-family: var(--mono); font-size: calc(var(--pt) * 7); letter-spacing: 0.08em; color: var(--teal-500); }
 .s-mega { font-size: calc(var(--pt) * 96); line-height: calc(var(--pt) * 91); letter-spacing: -0.035em; font-weight: 300; margin: 0; }
 
-.s-chart svg text { font-family: var(--mono); }
+.s-chart svg text { font-family: var(--sans); }
 
 @media print {
   .print-stack { width: 210mm; }

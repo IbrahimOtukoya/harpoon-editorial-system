@@ -5,7 +5,7 @@ import { colour, families, grid, spacing, type, columnWidthMm } from "@/lib/toke
 
 export const metadata: Metadata = { title: "Foundations · Harpoon Editorial System" };
 
-const familyCss = { head: "var(--head)", body: "var(--body)", mono: "var(--mono)" } as const;
+const familyCss = { head: "var(--head)", body: "var(--body)", data: "var(--sans)", mono: "var(--mono)" } as const;
 
 function onDark(hex: string) {
   const n = parseInt(hex.slice(1), 16);
@@ -15,6 +15,7 @@ function onDark(hex: string) {
 
 const samples: Record<string, string> = {
   display: "Diagnose",
+  figure: "1,486 assets",
   h1: "OT Risk & Visibility Insight",
   h2: "What we typically see",
   h3: "Key deliverables",
@@ -85,12 +86,12 @@ export default function Foundations() {
         <SectionHead
           n="02.2"
           title="Typography"
-          lead="Three families with separate jobs: Visby CF for headers, Poppins for body, Plex Mono for technical details. Hierarchy comes from the change of voice, not from adding weights."
+          lead="Four families with separate jobs: Visby CF for headers, Poppins for body, Plex Sans for numbers and data, Plex Mono for technical details. Hierarchy comes from the change of voice, not from adding weights."
         />
         <div className="families">
-          {(["head", "body", "mono"] as const).map((k) => (
+          {(["head", "body", "data", "mono"] as const).map((k) => (
             <div className="family" key={k}>
-              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "head" ? "Headers" : k === "body" ? "Body" : "Technical details"}</p>
+              <p className="eyebrow" style={{ margin: 0, color: "#5B6B70" }}>{k === "head" ? "Headers" : k === "body" ? "Body" : k === "data" ? "Numbers and data" : "Technical details"}</p>
               <div className="glyphs" style={{ fontFamily: familyCss[k], fontWeight: k === "head" ? 700 : 400 }}>
                 Aa<span style={{ color: "#0B7F7A" }}>62</span>
               </div>
@@ -100,8 +101,8 @@ export default function Foundations() {
           ))}
         </div>
         <p className="caption" style={{ marginTop: 16 }}>
-          Visby CF and Poppins are Harpoon&rsquo;s existing brand faces; Plex Mono is open-source (SIL Open Font
-          License). Embed all three in every exported PDF so nothing substitutes on another machine.
+          Visby CF and Poppins are Harpoon&rsquo;s existing brand faces; the two Plex families are open-source (SIL Open
+          Font License). Embed all four in every exported PDF so nothing substitutes on another machine.
         </p>
 
         <h3 className="h3" style={{ marginTop: 64, marginBottom: 8 }}>Scale</h3>

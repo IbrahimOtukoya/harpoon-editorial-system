@@ -54,14 +54,16 @@ export const type = [
   { token: "body", family: "body", weight: 400, size: 9, leading: 14, tracking: 0, use: "Running text. 55 to 75 characters per line." },
   { token: "ui", family: "body", weight: 400, size: 8.5, leading: 14, tracking: 0, use: "Tables, lists, deliverables, form-like content." },
   { token: "caption", family: "body", weight: 400, size: 7, leading: 10.5, tracking: 0.005, use: "Figure captions and sources." },
-  { token: "label", family: "mono", weight: 500, size: 7, leading: 10.5, tracking: 0.08, use: "Eyebrows, folios, running heads, standards refs, chart labels. Uppercase." },
+  { token: "label", family: "mono", weight: 500, size: 7, leading: 10.5, tracking: 0.08, use: "Eyebrows, folios, running heads, standards refs. Uppercase." },
+  { token: "figure", family: "data", weight: 400, size: 30, leading: 31.5, tracking: -0.02, use: "Stat callouts and key figures. Chart text uses the same face at caption size." },
   { token: "legal", family: "body", weight: 400, size: 6.5, leading: 9, tracking: 0.01, use: "Back page only. Nothing in the system is set smaller." },
 ] as const;
 
 export const families = {
   head: { name: "Visby CF", css: "'Visby CF', 'Urbanist Variable', sans-serif", why: "Harpoon's own geometric face, already in the logo. Bold weights only, for titles, section heads and sub-heads." },
   body: { name: "Poppins", css: "'Poppins', system-ui, sans-serif", why: "Harpoon's text face. Open and even, it stays readable at 9pt in reports and holds up in dense deliverable lists." },
-  mono: { name: "IBM Plex Mono", css: "'IBM Plex Mono', ui-monospace, monospace", why: "For technical detail and data: folios, labels, IEC 62443 clause numbers, durations, chart axes and values." },
+  data: { name: "IBM Plex Sans", css: "'IBM Plex Sans', system-ui, sans-serif", why: "For numbers and data: stat callouts, chart labels and values, figures in tables. Engineered figures with tabular widths line up in columns." },
+  mono: { name: "IBM Plex Mono", css: "'IBM Plex Mono', ui-monospace, monospace", why: "For technical details: folios, labels, IEC 62443 clause numbers, sources and references." },
 } as const;
 
 export const grid = {

@@ -253,10 +253,11 @@ p { margin: 0 0 1em; max-width: var(--measure); text-wrap: pretty; }
 .specimen .sample { min-width: 0; overflow-wrap: anywhere; }
 
 .families { display: grid; grid-template-columns: 1fr; gap: 0; border-top: var(--rule-strong); }
-@media (min-width: 900px) { .families { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .families { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .families { grid-template-columns: repeat(4, 1fr); } }
 .family { padding: 24px 24px 24px 0; border-bottom: var(--rule); }
 @media (min-width: 900px) { .family { border-bottom: 0; border-right: var(--rule); padding: 24px; } .family:first-child { padding-left: 0; } .family:last-child { border-right: 0; } }
-.family .glyphs { font-size: 88px; line-height: 1; margin: 12px 0 20px; letter-spacing: -0.02em; }
+.family .glyphs { font-size: clamp(56px, 4.6vw, 80px); line-height: 1; margin: 12px 0 20px; letter-spacing: -0.02em; }
 
 .grid-demo { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
 @media (min-width: 900px) { .grid-demo { grid-template-columns: minmax(0, 420px) 1fr; } }
@@ -271,19 +272,19 @@ p { margin: 0 0 1em; max-width: var(--measure); text-wrap: pretty; }
 .chart-card .sub { font-family: var(--body); font-size: 14px; color: var(--steel-500); margin: 8px 0 24px; }
 .chart-wrap { position: relative; }
 .chart-wrap svg { display: block; width: 100%; height: auto; overflow: visible; }
-.chart-wrap svg text { font-family: var(--mono); }
+.chart-wrap svg text { font-family: var(--sans); }
 .tip {
   position: absolute; pointer-events: none; background: var(--ink-900); color: var(--paper-50);
-  font-family: var(--mono); font-size: 12px; line-height: 1.4; padding: 8px 10px; border-radius: 3px;
+  font-family: var(--sans); font-size: 12.5px; line-height: 1.4; padding: 8px 10px; border-radius: 3px;
   transform: translate(-50%, calc(-100% - 10px)); white-space: nowrap; z-index: 5;
 }
 .tip b { font-weight: 600; display: block; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--mono); font-size: 13px; color: var(--ink-700); margin: 0 0 16px; padding: 0; list-style: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--sans); font-size: 13px; color: var(--ink-700); margin: 0 0 16px; padding: 0; list-style: none; }
 .legend li { display: flex; align-items: center; gap: 8px; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 .table-toggle { margin-top: 16px; font-family: var(--body); font-size: 13px; }
 .table-toggle summary { cursor: pointer; color: var(--teal-700); }
-.data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-family: var(--mono); font-size: 13px; }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-family: var(--sans); font-size: 13px; }
 .data-table th, .data-table td { text-align: left; padding: 6px 12px 6px 0; border-bottom: var(--rule); }
 .data-table td.r, .data-table th.r { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
 
@@ -291,7 +292,7 @@ p { margin: 0 0 1em; max-width: var(--measure); text-wrap: pretty; }
 @media (min-width: 760px) { .stat-row { grid-template-columns: repeat(3, 1fr); } }
 .stat { padding: 20px 24px 24px 0; border-bottom: var(--rule); }
 @media (min-width: 760px) { .stat { border-bottom: 0; border-right: var(--rule); padding: 20px 24px 8px; } .stat:first-child { padding-left: 0; } .stat:last-child { border-right: 0; } }
-.stat .v { font-family: var(--head); font-size: clamp(56px, 6vw, 84px); line-height: 1; letter-spacing: -0.03em; font-weight: 600; font-variant-numeric: lining-nums; }
+.stat .v { font-family: var(--sans); font-size: clamp(56px, 6vw, 84px); line-height: 1; letter-spacing: -0.03em; font-weight: 500; font-variant-numeric: lining-nums; }
 .stat .v small { font-size: 0.42em; letter-spacing: 0; margin-left: 4px; color: var(--steel-500); }
 .stat .l { font-family: var(--body); font-size: 14px; line-height: 1.45; color: var(--ink-700); margin-top: 12px; max-width: 22em; }
 .stat .s { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--steel-500); margin-top: 12px; }
