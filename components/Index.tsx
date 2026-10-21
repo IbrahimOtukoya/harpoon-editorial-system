@@ -9,7 +9,7 @@ export function Index() {
   return (
     <nav className="index no-print" aria-label="Contents">
       <Link href="/" className="index-brand">
-        <img src="/harpoon-logo-ink.png" alt="Harpoon" width={1189} height={226} />
+        <img src="/harpoon-logo-green.png" alt="Harpoon, OT Cybersecurity Consultants" width={300} height={61} />
       </Link>
       <ol>
         {sections.map((s) => {
